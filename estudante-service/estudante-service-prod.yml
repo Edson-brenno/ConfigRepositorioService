@@ -1,0 +1,29 @@
+
+spring:
+  datasource:
+    driver-class-name: org.h2.Driver
+    url: jdbc:h2:mem:homologacaodb
+    username: homologacao
+    password:
+  h2:
+    console:
+      path: /h2-console
+      enabled: true
+
+  jpa:
+    database-platform: org.hibernate.dialect.H2Dialect
+    defer-datasource-initialization: true
+    show-sql: false
+    generate-ddl: true
+    hibernate:
+      ddl-auto: create
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include:
+          - '*'
+server:
+  port: 8083
+# Configuring the database
